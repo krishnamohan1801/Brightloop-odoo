@@ -1,0 +1,26 @@
+# ===========================
+# Root-level Ignores
+# ===========================
+
+# Environment / Secrets (NEVER commit these!)
+.env
+.env.*
+*.env
+
+# OS Generated Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+logs/
+*.log
+
+# Temp / Scratch
+*.tmp
+*.bak
+*.swp

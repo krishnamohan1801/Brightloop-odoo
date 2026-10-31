@@ -1,0 +1,66 @@
+# ===========================
+# Maven / Build Artifacts
+# ===========================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# ===========================
+# Spring Boot
+# ===========================
+*.jar
+*.war
+*.ear
+*.class
+
+# ===========================
+# IDE Files
+# ===========================
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+
+# VS Code
+.vscode/
+
+# NetBeans
+nbproject/
+nb-configuration.xml
+
+# ===========================
+# Logs
+# ===========================
+logs/
+*.log
+*.log.*
+spring.log
+
+# ===========================
+# OS Generated Files
+# ===========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ===========================
+# Environment / Secrets
+# ===========================
+.env
+.env.*
+application-local.properties
+application-secret.properties
+
+# ===========================
+# Maven Wrapper (keep)
+# ===========================
+!.mvn/
