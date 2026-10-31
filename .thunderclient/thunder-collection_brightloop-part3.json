@@ -1,0 +1,158 @@
+{
+  "clientName": "Thunder Client",
+  "collectionName": "Brightloop Part 3 - Billing & Payments API",
+  "collectionId": "brightloop-part3-collection",
+  "dateExported": "2026-10-31",
+  "version": "1.1",
+  "folders": [
+    {
+      "_id": "folder_billing",
+      "name": "1. Invoices & Billing Engine",
+      "containerId": "",
+      "created": "2026-10-31T09:00:00.000Z",
+      "sortNum": 10000
+    },
+    {
+      "_id": "folder_payments",
+      "name": "2. Dummy Payment Simulator",
+      "containerId": "",
+      "created": "2026-10-31T09:00:00.000Z",
+      "sortNum": 20000
+    }
+  ],
+  "requests": [
+    {
+      "_id": "req_create_sample",
+      "colId": "brightloop-part3-collection",
+      "containerId": "folder_billing",
+      "name": "0. Create New Invoice On Demand (Instant Setup)",
+      "url": "http://localhost:8080/api/invoices/create-sample",
+      "method": "POST",
+      "sortNum": 5000,
+      "created": "2026-10-31T09:00:00.000Z"
+    },
+    {
+      "_id": "req_run_billing",
+      "colId": "brightloop-part3-collection",
+      "containerId": "folder_billing",
+      "name": "1. Run Billing Scheduler (Auto-Generate Invoices)",
+      "url": "http://localhost:8080/api/invoices/billing/run",
+      "method": "POST",
+      "sortNum": 10000,
+      "created": "2026-10-31T09:00:00.000Z"
+    },
+    {
+      "_id": "req_get_invoices",
+      "colId": "brightloop-part3-collection",
+      "containerId": "folder_billing",
+      "name": "2. List All Invoices",
+      "url": "http://localhost:8080/api/invoices",
+      "method": "GET",
+      "sortNum": 20000,
+      "created": "2026-10-31T09:00:00.000Z"
+    },
+    {
+      "_id": "req_get_overdue",
+      "colId": "brightloop-part3-collection",
+      "containerId": "folder_billing",
+      "name": "3. List Overdue Invoices",
+      "url": "http://localhost:8080/api/invoices/overdue",
+      "method": "GET",
+      "sortNum": 30000,
+      "created": "2026-10-31T09:00:00.000Z"
+    },
+    {
+      "_id": "req_get_invoice_detail",
+      "colId": "brightloop-part3-collection",
+      "containerId": "folder_billing",
+      "name": "4. Get Invoice Details by ID",
+      "url": "http://localhost:8080/api/invoices/PASTE_INVOICE_ID_HERE",
+      "method": "GET",
+      "sortNum": 40000,
+      "created": "2026-10-31T09:00:00.000Z"
+    },
+    {
+      "_id": "req_cancel_invoice",
+      "colId": "brightloop-part3-collection",
+      "containerId": "folder_billing",
+      "name": "6. Cancel Invoice",
+      "url": "http://localhost:8080/api/invoices/PASTE_INVOICE_ID_HERE/cancel",
+      "method": "POST",
+      "sortNum": 60000,
+      "created": "2026-10-31T09:00:00.000Z"
+    },
+    {
+      "_id": "req_simulate_payment",
+      "colId": "brightloop-part3-collection",
+      "containerId": "folder_payments",
+      "name": "7. Simulate Payment (Card / UPI / Cash / Bank)",
+      "url": "http://localhost:8080/api/payments/simulate",
+      "method": "POST",
+      "sortNum": 70000,
+      "created": "2026-10-31T09:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"invoiceId\": \"PASTE_INVOICE_ID_HERE\",\n  \"amount\": 500.00,\n  \"paymentMethod\": \"upi\",\n  \"outcome\": \"SUCCESS\"\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "req_payment_history",
+      "colId": "brightloop-part3-collection",
+      "containerId": "folder_payments",
+      "name": "8. Get Payment History for Invoice",
+      "url": "http://localhost:8080/api/payments/invoice/PASTE_INVOICE_ID_HERE",
+      "method": "GET",
+      "sortNum": 80000,
+      "created": "2026-10-31T09:00:00.000Z"
+    },
+    {
+      "_id": "req_resolve_pending",
+      "colId": "brightloop-part3-collection",
+      "containerId": "folder_payments",
+      "name": "9. Resolve Pending Payment",
+      "url": "http://localhost:8080/api/payments/PASTE_PAYMENT_ID_HERE/resolve",
+      "method": "POST",
+      "sortNum": 90000,
+      "created": "2026-10-31T09:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"outcome\": \"SUCCESS\"\n}",
+        "form": []
+      }
+    },
+    {
+      "_id": "req_simulate_refund",
+      "colId": "brightloop-part3-collection",
+      "containerId": "folder_payments",
+      "name": "10. Simulate Refund",
+      "url": "http://localhost:8080/api/payments/PASTE_PAYMENT_ID_HERE/refund",
+      "method": "POST",
+      "sortNum": 100000,
+      "created": "2026-10-31T09:00:00.000Z",
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "body": {
+        "type": "json",
+        "raw": "{\n  \"amount\": 250.00\n}",
+        "form": []
+      }
+    }
+  ]
+}
