@@ -1,0 +1,18 @@
+# Maven target directory
+target/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+*.log
+
+# Sensitive environment & local credential files (NEVER commit to git)
+.env
+.env.local
+application-local.properties
+src/main/resources/application-local.properties
+
+# Exclude frontend for now as requested (auth branch is backend-only for now)
+frontend-auth/
